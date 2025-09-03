@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+#mainHeader {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0 1rem;
+    position: fixed;
+    top: 0;
+    z-index: 1001;
+}
+
+#headerLogo {
+    flex: 0 0 auto;
+}
+
+#headerLogo img {
+    justify-self: start;
+    height: 40px;
+    border-radius: 100%;
+}
+
+#navBar {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#navBar a, #mobileNavBar a {
+    text-decoration: none;
+    font-family: 'Bungee', cursive;
+    color: black;
+    font-size: 1rem;
+    padding: .3rem .6rem;
+}
+
+#navBar a:hover {
+    color: rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
+
+#navBar a.active {
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+}
+
+#hamburgerIcon img {
+    justify-self: start;
+    height: 25px;
+}
+
+#mobileNavBar {
+    display: none;
+    width: 100%;
+    height: 100dvh;
+    position: fixed;
+    left: 0;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+#taglineSection {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #a31919;
+    z-index: 0;
+    border-radius: 0 0 50% 50% / 0 0 10% 10%;
+}
+
+#taglineSection > h1 {
+    font-family: 'Story Script', cursive;
+    font-size: 4rem;
+    font-weight: 800;
+    color: black;
+    margin-bottom: .5rem;
+    text-align: center;
+}
+
+#taglineSection > p {
+    font-family: 'Roboto', sans-serif;
+    font-size: .9rem;
+    color: black;
+}
+
+#aboutSection {
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+#aboutSection .sectionContent {
+    border: black 2px solid;
+}
+
+#aboutSection .sectionContent > article {
+    font-family: 'Roboto', sans-serif;
+    font-size: .8rem;
+    line-height: 1.6;
+    color: #333;
+    padding: 1rem;
+}
+
+#aboutSection .sectionContent > aside img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+#projectsSection {
+    width: 100%;
+    min-height: 80dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #a31919;
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 1;
+    border-radius: 5% 5% 0 0;
+}
+
+#projectsShowcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#mainFooter {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: .8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.projectCard {
+    color: white;
+    background-color: black;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+}
+
+.projectCard h3 {
+    font-family: 'Bungee', cursive;
+    font-size: 1.2rem;
+    margin: .5rem 0;
+    padding: 1rem .5rem 0rem .5rem;
+}
+
+.projectCard p {
+    font-family: 'Roboto', sans-serif;
+    font-size: .8rem;
+    line-height: 1.4;
+    margin: .5rem 0;
+    padding: .5rem .5rem;
+    flex-grow: 1;
+    text-align: justify;
+}
+
+.sectionContent {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectLinks {
+    display: flex;
+    gap: 1rem;
+    padding: .5rem;
+}
+
+.github img, .streamlit img {
+    height: 30px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.github img:hover, .streamlit img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 600px) {
+    #navBar {
+        display: none;
+    }
+
+    #taglineSection > h1 {
+        font-size: 2.5rem;
+    }
+    
+    .sectionContent {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    #hamburgerMenu {
+        display: none;
+    }
+}

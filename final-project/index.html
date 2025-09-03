@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dash4K</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="mainHeader">
+        <div id="headerLogo">
+            <img src="imgs/Logo4k.png" alt="Logo">
+        </div>
+        <nav id="navBar">
+            <a href="#taglineSection">Home</a>
+            <a href="#aboutSection">About</a>
+            <a href="#projectsSection">Projects</a>
+        </nav>
+        <div id="hamburgerMenu">
+            <div id="hamburgerIcon" onclick="toggleMobileNav()">
+                <img src="imgs/hamburger.png" alt="Hamburger Menu Icon">                
+            </div>
+        </div>
+    </header>
+    <nav id="mobileNavBar">
+        <a class="mobileLink" href="#taglineSection">Home</a>
+        <a class="mobileLink" href="#aboutSection">About</a>
+        <a class="mobileLink" href="#projectsSection">Projects</a>
+    </nav>
+    <main>
+        <section id="taglineSection">
+            <h1>Danishwara Pracheta</h1>
+            <p>Part-time Comedian | Full-time Clown</p>
+        </section>
+        <section id="aboutSection">
+            <div class="sectionContent">
+                <article>
+                    <p>
+                        Welcome aboard stranger❗<br><br>
+                        My name is Danishwara, but you can call me Dash.<br><br>
+                        I'm currently studying Computer Science at Udayana University in Bali, Indonesia. I like programming in general, but for some time now I've started doing web programming, both front-end and back-end development. I also have a strong interest in game development, even though I'm nowhere near mastering it.<br><br>
+                        Outside the coding stuff, I also have an interest in cybersecurity and network engineering. Also, I like to do photography once in a while—I even created an Instagram page dedicated to showcasing my favorite shots (lol). If you have similar interests as me, feel free to hit me up!
+                    </p>
+                </article>
+                <aside>
+                    <img src="imgs/profile.jpg" alt="Foto Profile">
+                </aside>
+            </div>
+        </section>
+        <section id="projectsSection">
+            <div class="sectionContent">
+                <article>
+                    <div id="projectsShowcase">
+                        <div class="projectCard">
+                            <img src="imgs/project1.png" alt="Project 1 Screenshot">
+                            <h3>PSO & GWO Optimizer</h3>
+                            <p>Particle Swarm Optimizer (PSO) and Grey Wolf Optimizer (GWO) for sphere function using python</p>
+                            <div class="projectLinks">
+                                <a target="_blank" rel="noopener noreferrer" class="github" href="https://github.com/dash4k/python-pso-gwo-optimizer">
+                                    <img src="imgs/github.png" alt="GitHub Link">
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" class="streamlit" href="https://python-pso-gwo-optimizer.streamlit.app/">
+                                    <img src="imgs/streamlit.png" alt="Streamlit Link">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="projectCard">
+                            <img src="imgs/project2.png" alt="Project 2 Screenshot">
+                            <h3>SVM Spoken Digit Detection</h3>
+                            <p>Free Spoken Digit Detection using SVM and MFCC + Frequency/Time Domain Features</p>
+                            <div class="projectLinks">
+                                <a target="_blank" rel="noopener noreferrer" class="github" href="https://github.com/dash4k/svm-spoken-digit-detection">
+                                    <img src="imgs/github.png" alt="GitHub Link">
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" class="streamlit" href="https://svm-mfcc-spoken-digit-detection.streamlit.app/">
+                                    <img src="imgs/streamlit.png" alt="Streamlit Link">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="projectCard">
+                            <img src="imgs/project3.png" alt="Project 3 Screenshot">
+                            <h3>CNN Spoken Digit Detection</h3>
+                            <p>Spoken Digit Detection using a Convolutional Neural Network and MFCC</p>
+                            <div class="projectLinks">
+                                <a target="_blank" rel="noopener noreferrer" class="github" href="https://github.com/dash4k/cnn-spoken-digit-detection">
+                                    <img src="imgs/github.png" alt="GitHub Link">
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" class="streamlit" href="https://cnn-spoken-digit-detection.streamlit.app/">
+                                    <img src="imgs/streamlit.png" alt="Streamlit Link">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer id="mainFooter">
+        <p>&copy;dash4k | Danishwara Pracheta</p>
+    </footer>
+</body>
+</html>
