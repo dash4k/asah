@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${Date.now()}-${Math.floor(Math.random() * 1000000)}`;
     }
 
-    function createBook(title, author, year, completed) {
+    function createBook(title, author, year, isCompleted) {
         return {
             id: generateId(),
             title,
             author,
-            year,
-            completed,
+            year: parseInt(year),
+            isCompleted,
         }
     }
 
@@ -56,10 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = document.getElementById('bookFormTitle').value;
         const author = document.getElementById('bookFormAuthor').value;
         const year = document.getElementById('bookFormYear').value;
-        const completed = document.getElementById('bookFormIsComplete').checked;
-        console.log(completed);
+        const isCompleted = document.getElementById('bookFormIsComplete').checked;
 
-        const newBook = createBook(title, author, year, completed);
+        const newBook = createBook(title, author, year, isCompleted);
         books.push(newBook);
 
         document.dispatchEvent(new Event(RENDER_EVENT));
@@ -69,15 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function makeBook(book) {
         const bookTitle = document.createElement('h3');
-        bookTitle.setAttribute('dataTestId', 'bookItemTitle');
+        bookTitle.setAttribute('data-testid', 'bookItemTitle');
         bookTitle.innerText = book.title;
 
         const bookAuthor = document.createElement('p');
-        bookAuthor.setAttribute('dataTestId', 'bookItemAuthor');
+        bookAuthor.setAttribute('data-testid', 'bookItemAuthor');
         bookAuthor.innerText = `Penulis: ${book.author}`;
 
         const bookYear = document.createElement('p');
-        bookYear.setAttribute('dataTestId', 'bookItemYear');
+        bookYear.setAttribute('data-testid', 'bookItemYear');
         bookYear.innerText = `Tahun: ${book.year}`;
 
         const bookActions = document.createElement('div');
@@ -85,18 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const toggleButton = document.createElement('button');
         toggleButton.classList.add('toggleButton');
-        toggleButton.setAttribute('dataTestId', 'bookItemIsCompleteButton');
-        toggleButton.innerText = book.completed ? 'Belum Selesai dibaca' : 'Selesai dibaca';
+        toggleButton.setAttribute('data-testid', 'bookItemIsCompleteButton');
+        toggleButton.innerText = book.isCompleted ? 'Belum Selesai dibaca' : 'Selesai dibaca';
 
         toggleButton.addEventListener('click', () => {
-            book.completed = !book.completed;
+            book.isCompleted = !book.isCompleted;
             document.dispatchEvent(new Event(RENDER_EVENT));
             saveBooks();
         });
 
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('deleteButton');
-        deleteButton.setAttribute('dataTestId', 'bookItemDeleteButton');
+        deleteButton.setAttribute('data-testid', 'bookItemDeleteButton');
         deleteButton.innerText = 'Hapus Buku';
 
         deleteButton.addEventListener('click', () => {
@@ -110,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const editButton = document.createElement('button');
         editButton.classList.add('editButton');
-        editButton.setAttribute('dataTestId', 'bookItemEditButton');
+        editButton.setAttribute('data-testid', 'bookItemEditButton');
         editButton.innerText = 'Edit Buku';
 
         editButton.addEventListener('click', () => {
@@ -121,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (newTitle && newAuthor && newYear) {
                 book.title = newTitle;
                 book.author = newAuthor;
-                book.year = newYear;
+                book.year = parseInt(newYear);
                 document.dispatchEvent(new Event(RENDER_EVENT));
                 saveData();
             }
@@ -132,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const bookContainer = document.createElement('div');
         bookContainer.classList.add('books');
         bookContainer.setAttribute('data-bookid', book.id);
-        bookContainer.setAttribute('dataTestId', 'bookItem');
+        bookContainer.setAttribute('data-testid', 'bookItem');
 
         bookContainer.append(bookTitle, bookAuthor, bookYear, bookActions);
         return bookContainer;
@@ -153,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (const book of results) {
         const bookElement = makeBook(book);
-        if (!book.completed) {
+        if (!book.isCompleted) {
             incompleteBookList.append(bookElement);
         } else {
             completeBookList.append(bookElement);
@@ -170,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (const book of books) {
             const bookElement = makeBook(book);
-            if (book.completed) {
+            if (book.isCompleted) {
                 completeBookList.append(bookElement);
             } else {
                 incompleteBookList.append(bookElement);
