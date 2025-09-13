@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${Date.now()}-${Math.floor(Math.random() * 1000000)}`;
     }
 
-    function createBook(title, author, year, isCompleted) {
+    function createBook(title, author, year, isComplete) {
         return {
             id: generateId(),
             title,
             author,
             year: parseInt(year),
-            isCompleted,
+            isComplete,
         }
     }
 
@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = document.getElementById('bookFormTitle').value;
         const author = document.getElementById('bookFormAuthor').value;
         const year = document.getElementById('bookFormYear').value;
-        const isCompleted = document.getElementById('bookFormIsComplete').checked;
+        const isComplete = document.getElementById('bookFormIsComplete').checked;
 
-        const newBook = createBook(title, author, year, isCompleted);
+        const newBook = createBook(title, author, year, isComplete);
         books.push(newBook);
 
         document.dispatchEvent(new Event(RENDER_EVENT));
@@ -85,10 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const toggleButton = document.createElement('button');
         toggleButton.classList.add('toggleButton');
         toggleButton.setAttribute('data-testid', 'bookItemIsCompleteButton');
-        toggleButton.innerText = book.isCompleted ? 'Belum Selesai dibaca' : 'Selesai dibaca';
+        toggleButton.innerText = book.isComplete ? 'Belum Selesai dibaca' : 'Selesai dibaca';
 
         toggleButton.addEventListener('click', () => {
-            book.isCompleted = !book.isCompleted;
+            book.isComplete = !book.isComplete;
             document.dispatchEvent(new Event(RENDER_EVENT));
             saveBooks();
         });
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (const book of results) {
         const bookElement = makeBook(book);
-        if (!book.isCompleted) {
+        if (!book.isComplete) {
             incompleteBookList.append(bookElement);
         } else {
             completeBookList.append(bookElement);
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (const book of books) {
             const bookElement = makeBook(book);
-            if (book.isCompleted) {
+            if (book.isComplete) {
                 completeBookList.append(bookElement);
             } else {
                 incompleteBookList.append(bookElement);
