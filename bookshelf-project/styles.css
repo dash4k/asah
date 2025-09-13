@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #F8F8FF;
+    color: #2D2926;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
+
+header {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: #05C3DE;
+}
+
+h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2.5rem;
+    color: #FFFFFF;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
+
+section {
+    width: 80%;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid #AD9FCB;
+}
+
+section > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+}
+
+h2 {
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+form div:last-of-type {
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 0.5rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #5F4B8B;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #05C3DE;
+}
+
+form button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #05C3DE;
+    color: #FFFFFF;
+    border: none;
+}
+
+form button:hover {
+    background-color: #91F0FD;
+    color: #2D2926;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+form button span {
+    font-weight: bold;
+}
+
+#completeBookList, #incompleteBookList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#searchBook {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#searchBook button {
+    flex: 1;
+    font-weight: bold;
+}
+
+.books {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 1px solid #AD9FCB;
+    border-width: 4px 1px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.actions button {
+    padding: 0.3rem;
+    border: none;
+    font-weight: bold;
+}
+
+.actions button:hover {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.toggleButton {
+    background-color: #05C3DE;
+    color: #FFFFFF;
+}
+
+.deleteButton {
+    background-color: #5F4B8B;
+    color: #FFFFFF;
+}
+
+.editButton {
+    background-color: #D9D9D6;
+    color: #2D2926;
+}
