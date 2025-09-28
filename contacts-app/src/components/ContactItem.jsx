@@ -7,8 +7,7 @@ import PropTypes from 'prop-types';
 function ContactItem({ imageUrl, name, tag, id, onDelete }) {
  return (
    <div className="contact-item">
-     <ContactItemImage />
-     {/* <ContactItemImage imageUrl={imageUrl} /> */}
+     <ContactItemImage imageUrl={imageUrl} />
      <ContactItemBody name={name} tag={tag} />
      <DeleteButton id={id} onDelete={onDelete} />
    </div>
